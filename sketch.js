@@ -102,12 +102,14 @@ function readStock(data){
 
 
   function feedDog() {
+    if (foodS>0){
     mainDog.addImage(happyDog);
     foodObj.updateFoodStock(foodObj.getFoodStock()-1);
     database.ref('/').update({
       food: foodObj.getFoodStock(),
       FeedTime : hour()
     })
+  }
   }
 
 
